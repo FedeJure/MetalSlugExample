@@ -2,11 +2,8 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import modelo.NoGun;
-import modelo.SimpleGun;
 import vista.Main;
 
 public class ButtonNoGun extends Button {

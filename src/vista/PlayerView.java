@@ -1,17 +1,9 @@
 package vista;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+
 
 public class PlayerView implements Drawable{
 	private double positionX;

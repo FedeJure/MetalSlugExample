@@ -7,12 +7,10 @@ import vista.Main;
 
 public class NoGun implements AttackStrategy {
 	
-	private int power;
 	private String name = "marco_unarmed";
 
 	@Override
 	public void attack(Attackable target) {
-		power = 1;
 	}
 
 	@Override
