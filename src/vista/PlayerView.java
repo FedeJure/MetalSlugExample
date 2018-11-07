@@ -29,28 +29,7 @@ public class PlayerView implements Drawable{
 		playerImage.setTranslateY(positionY);
 		playerImage.setScaleX(playerScale);
 		playerImage.setScaleY(playerScale);
-		
-		root.setOnKeyPressed(new EventHandler<KeyEvent>() {
-		    public void handle(KeyEvent event) {
-		        if(event.getCode() == KeyCode.W) {
-		        	playerImage.setTranslateY(playerImage.getTranslateY() + 1);
-		        }
-		        if( event.getCode() == KeyCode.S) {
-		        	playerImage.setTranslateY(-100);
-		        }
-		        if (event.getCode() == KeyCode.D) {
-		        	playerImage.setTranslateX(1);
-		        }
-		        if (event.getCode() == KeyCode.A) {
-		        	playerImage.setTranslateX(-1);
-		        } 
-		        Logger.getLogger("PlayerView").log(Level.INFO, "Moveing with: "+event.getCode());
-		        root.getChildren().add(playerImage);
-		        event.consume();
-		        
-		    }
-			
-		});
+
 		playerImage.setImage(new Image("marco_unarmed.png"));
 		root.getChildren().add(playerImage);
 
@@ -83,8 +62,11 @@ public class PlayerView implements Drawable{
 		draw();
 	}
 	
-	public void changePlayerSkin(Image img) {
-		playerImage.setImage(img);
+	public void changePlayerSkin(String fileName) {
+		playerImage.setImage(new Image(fileName + ".png"));
+	}
+	public void updateSkin() {
+		changePlayerSkin(Main.getPlayerModel().getStrategyName());
 	}
 	
 	

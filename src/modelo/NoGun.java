@@ -5,22 +5,19 @@ import java.util.logging.Logger;
 
 import vista.Main;
 
-public class SimpleGun implements AttackStrategy {
+public class NoGun implements AttackStrategy {
 	
 	private int power;
-	private String name = "marco_pistola";
-	public SimpleGun() {
-		power = 10;
-	}
-	
+	private String name = "marco_unarmed";
+
 	@Override
 	public void attack(Attackable target) {
-		target.takeDamage(power);
+		power = 1;
 	}
 
 	@Override
 	public void hasChange() {
-		Logger.getLogger("SimpleGun").log(Level.INFO, "Estrategia cambiada a SimpleGun");
+		Logger.getLogger("SimpleGun").log(Level.INFO, "Estrategia cambiada a NoGun");
 		Main.playerHasChange();
 	}
 
@@ -28,4 +25,5 @@ public class SimpleGun implements AttackStrategy {
 	public String getName() {
 		return name;
 	}
+
 }

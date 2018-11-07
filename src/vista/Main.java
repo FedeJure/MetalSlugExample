@@ -95,4 +95,8 @@ public class Main extends Application
         root.getChildren().add(background);
     }
     
+    public static void playerHasChange() {
+    	player.updateSkin();
+    }
+    
 }

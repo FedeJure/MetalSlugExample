@@ -15,4 +15,7 @@ public class Player {
 		attackStrategy = newStrategy;
 		newStrategy.hasChange();
 	}
+	public String getStrategyName() {
+		return attackStrategy.getName();
+	}
 }

@@ -1,6 +1,7 @@
 package vista;
 
 import controller.ButtonHeavyMachineGun;
+import controller.ButtonNoGun;
 import controller.ButtonSimpleGun;
 import javafx.scene.layout.HBox;
 
@@ -13,6 +14,7 @@ public class GunButtonContainer extends HBox{
 		this.setHeight(Main.heigth/10);
 		this.getChildren().add(new ButtonSimpleGun());
 		this.getChildren().add(new ButtonHeavyMachineGun());
+		this.getChildren().add(new ButtonNoGun());
 		
 	}
 }

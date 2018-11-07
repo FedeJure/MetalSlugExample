@@ -22,7 +22,6 @@ public class ButtonSimpleGun extends Button {
 			@Override
 			public void handle(ActionEvent event) {
 				Main.getPlayerModel().changeAttackStrategy(gun);
-				Main.getPlayerView().changePlayerSkin(new Image("marco_pistola.png"));
 			}
 			
 		});
