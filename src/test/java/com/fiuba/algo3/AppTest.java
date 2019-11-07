@@ -1,4 +1,4 @@
-package com.fiuba.algo3;
+package main.java.com.fiuba.algo3;
 
 import static org.junit.Assert.assertTrue;
 

@@ -1,4 +1,4 @@
-package com.fiuba.algo3.vista;
+package main.java.com.fiuba.algo3.vista;
 
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -7,25 +7,26 @@ import javafx.scene.image.ImageView;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.fiuba.algo3.modelo.AttackStrategy;
-import com.fiuba.algo3.modelo.NoGun;
-import com.fiuba.algo3.modelo.Player;
+import main.java.com.fiuba.algo3.modelo.AttackStrategy;
+import main.java.com.fiuba.algo3.modelo.NoGun;
+import main.java.com.fiuba.algo3.modelo.Player;
+import main.java.com.fiuba.algo3.vista.World;
 
 public class PlayerView implements Drawable {
 	private double positionX;
 	private double positionY;
 	private double playerScale = 4;
-	private Group root;
+	private World stage;
 	ImageView playerImage;
 
 	private Player player;
 
-	public PlayerView(Group root) {
-		this.root = root;
+	public PlayerView(World stage) {
+		this.stage = stage;
 		player = new Player();
 
-		positionX = Main.width / 2;
-		positionY = Main.heigth / 2;
+		positionX = stage.getWidth() / 2;
+		positionY = stage.getHeigth() / 2;
 
 		playerImage = new ImageView();
 		playerImage.setTranslateX(positionX);
@@ -34,7 +35,8 @@ public class PlayerView implements Drawable {
 		playerImage.setScaleY(playerScale);
 
 		playerImage.setImage(new Image("marco_unarmed.png"));
-		root.getChildren().add(playerImage);
+		stage.addView(playerImage);
+		draw();
 
 	}
 
@@ -42,12 +44,11 @@ public class PlayerView implements Drawable {
 	public void draw() {
 		playerImage.setTranslateX(positionX);
 		playerImage.setTranslateY(positionY);
-		root.getChildren().remove(playerImage);
-		root.getChildren().add(playerImage);
+		stage.updateView(playerImage);
 	}
 
 	public void moveHorizontal(int count) {
-		if (positionX + count > Main.width - playerImage.getImage().getWidth() * playerImage.getScaleX()
+		if (positionX + count > stage.getWidth() - playerImage.getImage().getWidth() * playerImage.getScaleX()
 				|| positionX + count < 0) {
 			return;
 		}
@@ -62,7 +63,7 @@ public class PlayerView implements Drawable {
 	}
 
 	public void moveVertical(int count) {
-		if (positionY + count > Main.heigth - playerImage.getImage().getHeight() || positionY + count < 0) {
+		if (positionY + count > stage.getHeigth() - playerImage.getImage().getHeight() || positionY + count < 0) {
 			return;
 		}
 		positionY += count;

@@ -38,7 +38,7 @@
               <artifactId>javafx-maven-plugin</artifactId>
               <version>0.0.3</version>
               <configuration>
-                  <mainClass>com.fiuba.algo3.vista.Main </mainClass>
+                  <mainClass>main.java.com.fiuba.algo3.vista.Main </mainClass>
               </configuration>
           </plugin>
       </plugins>

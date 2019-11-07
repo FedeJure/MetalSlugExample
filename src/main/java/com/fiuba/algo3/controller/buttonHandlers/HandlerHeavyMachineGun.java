@@ -1,9 +1,9 @@
-package com.fiuba.algo3.controller.buttonHandlers;
+package main.java.com.fiuba.algo3.controller.buttonHandlers;
 
 import javafx.event.EventHandler;
 
-import com.fiuba.algo3.modelo.*;
-import com.fiuba.algo3.vista.PlayerView;
+import main.java.com.fiuba.algo3.modelo.*;
+import main.java.com.fiuba.algo3.vista.PlayerView;
 import javafx.event.ActionEvent;
 
 public class HandlerHeavyMachineGun implements EventHandler<ActionEvent> {

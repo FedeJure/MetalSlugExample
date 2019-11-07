@@ -1,10 +1,10 @@
 
-package com.fiuba.algo3.modelo;
+package main.java.com.fiuba.algo3.modelo;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.fiuba.algo3.vista.Main;
+import main.java.com.fiuba.algo3.vista.Main;
 
 public class HeavyMachineGun implements AttackStrategy {
 

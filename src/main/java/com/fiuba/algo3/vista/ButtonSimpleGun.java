@@ -1,12 +1,12 @@
-package com.fiuba.algo3.vista;
+package main.java.com.fiuba.algo3.vista;
 
 import javafx.scene.control.Button;
 
-import com.fiuba.algo3.controller.buttonHandlers.HandlerSimpleGun;
-import com.fiuba.algo3.modelo.AttackStrategy;
-import com.fiuba.algo3.modelo.SimpleGun;
-import com.fiuba.algo3.vista.Main;
-import com.fiuba.algo3.vista.PlayerView;;
+import main.java.com.fiuba.algo3.controller.buttonHandlers.HandlerSimpleGun;
+import main.java.com.fiuba.algo3.modelo.AttackStrategy;
+import main.java.com.fiuba.algo3.modelo.SimpleGun;
+import main.java.com.fiuba.algo3.vista.Main;
+import main.java.com.fiuba.algo3.vista.PlayerView;;
 
 public class ButtonSimpleGun extends Button {
 
@@ -16,7 +16,7 @@ public class ButtonSimpleGun extends Button {
 		super();
 		gun = new SimpleGun();
 		this.setText("Activate Simple Gun");
-		this.setMinHeight(Main.heigth / 10);
+		this.setMinHeight(100);
 		this.setOnAction(new HandlerSimpleGun(playerView));
 	}
 }

@@ -1,6 +1,6 @@
-package com.fiuba.algo3.controller;
+package main.java.com.fiuba.algo3.controller;
 
-import com.fiuba.algo3.vista.PlayerView;
+import main.java.com.fiuba.algo3.vista.PlayerView;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
