@@ -2,15 +2,15 @@ package main.java.com.fiuba.algo3.controller.buttonHandlers;
 
 import javafx.event.EventHandler;
 
-import main.java.com.fiuba.algo3.modelo.*;
-import main.java.com.fiuba.algo3.vista.PlayerView;
+import main.java.com.fiuba.algo3.modelo.NoGun;;
+import main.java.com.fiuba.algo3.modelo.Player;
 import javafx.event.ActionEvent;
 
 public class HandlerNoGun implements EventHandler<ActionEvent> {
 
-  private PlayerView player;
+  private Player player;
 
-  public HandlerNoGun(PlayerView player) {
+  public HandlerNoGun(Player player) {
     this.player = player;
   }
 

@@ -1,6 +1,7 @@
 package main.java.com.fiuba.algo3.controller;
 
-import main.java.com.fiuba.algo3.vista.PlayerView;
+import main.java.com.fiuba.algo3.modelo.Map;
+import main.java.com.fiuba.algo3.modelo.Player;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
@@ -8,25 +9,27 @@ import javafx.scene.input.KeyEvent;
 
 public class MainKeyboardController implements EventHandler<KeyEvent> {
 
-  private PlayerView playerView;
+  private Player player;
+  private Map map;
 
-  public MainKeyboardController(PlayerView playerView) {
-    this.playerView = playerView;
+  public MainKeyboardController(Player player, Map map) {
+    this.player = player;
+    this.map = map;
   }
 
   public void handle(KeyEvent event) {
 
     if (event.getCode() == KeyCode.W) {
-      playerView.moveVertical(-10);
+      map.movePositionableToUp(this.player);          
     }
     if (event.getCode() == KeyCode.S) {
-      playerView.moveVertical(10);
+      map.movePositionableToDown(this.player);            
     }
     if (event.getCode() == KeyCode.D) {
-      playerView.moveHorizontal(10);
+      map.movePositionableToRigth(this.player);      
     }
     if (event.getCode() == KeyCode.A) {
-      playerView.moveHorizontal(-10);
+      map.movePositionableToLeft(this.player);      
     }
     event.consume();
   }

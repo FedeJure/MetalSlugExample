@@ -1,20 +1,15 @@
 package main.java.com.fiuba.algo3.vista;
 
 import javafx.scene.control.Button;
-import main.java.com.fiuba.algo3.modelo.AttackStrategy;
-import main.java.com.fiuba.algo3.modelo.HeavyMachineGun;
-import main.java.com.fiuba.algo3.vista.Main;
-import main.java.com.fiuba.algo3.vista.PlayerView;
+import main.java.com.fiuba.algo3.modelo.Player;
 import main.java.com.fiuba.algo3.controller.buttonHandlers.HandlerHeavyMachineGun;
 
 public class ButtonHeavyMachineGun extends Button {
-	private AttackStrategy gun;
 
-	public ButtonHeavyMachineGun(PlayerView playerView) {
+	public ButtonHeavyMachineGun(Player player) {
 		super();
-		gun = new HeavyMachineGun();
 		this.setText("Activate Heavy Machine Gun");
 		this.setMinHeight(100);
-		this.setOnAction(new HandlerHeavyMachineGun(playerView));
+		this.setOnAction(new HandlerHeavyMachineGun(player));
 	}
 }
