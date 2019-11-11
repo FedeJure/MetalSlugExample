@@ -20,14 +20,12 @@ public class MapView extends Group {
     private double tileWidth = 64;
     private double tileHeigth = 64;
 
-    private Map map;
     private GridPane table;
 
     private Pane[][] panes;
 
     public MapView(Map map){
         table = new GridPane();
-        this.map = map;
         width = tileWidth * map.getWidth();
         heigth = tileHeigth * map.getHeigth();
         panes = new Pane[ (int)width][(int)heigth];
@@ -56,7 +54,6 @@ public class MapView extends Group {
             for (int j = 0; j < heigth; j++) {
                 try {
                     panes[i][j].getChildren().remove(view);
-                    
                 } catch (Exception e) {
                     //TODO: handle exception
                 }

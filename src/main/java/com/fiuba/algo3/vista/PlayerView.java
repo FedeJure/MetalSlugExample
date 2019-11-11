@@ -8,22 +8,22 @@ import main.java.com.fiuba.algo3.modelo.Player;
 import main.java.com.fiuba.algo3.vista.MapView;
 
 public class PlayerView implements Observer, Drawable {
-	private double positionX;
-	private double positionY;
 	private double playerScale = 1;
 	private MapView stage;
 	ImageView playerImage;
 
 	private Player player;
 
+	private int lastXPosition;
+
 	public PlayerView(MapView stage, Player player) {
 		this.stage = stage;
 		this.player = player;
+
+		this.lastXPosition = player.getPosition().getX();
 		player.addObserver(this);
 
 		playerImage = new ImageView();
-		playerImage.setTranslateX(positionX);
-		playerImage.setTranslateY(positionY);
 		playerImage.setScaleX(playerScale);
 		playerImage.setScaleY(playerScale);
 		playerImage.setFitHeight(64);
@@ -37,32 +37,9 @@ public class PlayerView implements Observer, Drawable {
 
 	@Override
 	public void draw() {
-		playerImage.setTranslateX(positionX);
-		playerImage.setTranslateY(positionY);
+		playerImage.setTranslateX(0);
+		playerImage.setTranslateY(0);
 		stage.updateView(playerImage);
-	}
-
-	public void moveHorizontal(int count) {
-		/*if (positionX + count > stage.getWidth() - playerImage.getImage().getWidth() * playerImage.getScaleX()
-				|| positionX + count < 0) {
-			return;
-		}
-		if (count < 0 && playerImage.getScaleX() > 0) {
-			playerImage.setScaleX(playerImage.getScaleX() * -1);
-		}
-		if (count > 0 && playerImage.getScaleX() < 0) {
-			playerImage.setScaleX(playerImage.getScaleX() * -1);
-		}
-		positionX += count;
-		draw();*/
-	}
-
-	public void moveVertical(int count) {
-		/*if (positionY + count > stage.getHeight() - playerImage.getImage().getHeight() || positionY + count < 0) {
-			return;
-		}
-		positionY += count;
-		draw();*/
 	}
 
 	private void changePlayerSkin(String fileName) {
@@ -72,6 +49,16 @@ public class PlayerView implements Observer, Drawable {
 	@Override
 	public void change() {
 		changePlayerSkin(player.getStrategyName());
+		if (lastXPosition > player.getPosition().getX()) {
+			this.playerImage.setScaleX( - 
+			Math.abs(playerImage.getScaleX()));
+		}
+
+		else if (lastXPosition < player.getPosition().getY()) {
+			this.playerImage.setScaleX(
+			-Math.abs(playerImage.getScaleX()));
+		}
+		lastXPosition = player.getPosition().getX();
 		stage.addViewOnMap(this.playerImage, player.getPosition().getX(), player.getPosition().getY());
 	}
 
