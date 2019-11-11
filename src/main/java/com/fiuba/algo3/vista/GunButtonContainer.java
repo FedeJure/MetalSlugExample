@@ -7,7 +7,7 @@ public class GunButtonContainer extends HBox {
 
 	public GunButtonContainer(Player player) {
 		super();
-		this.setHeight(100);
+		this.setHeight(20);
 		this.getChildren().add(new ButtonSimpleGun(player));
 		this.getChildren().add(new ButtonHeavyMachineGun(player));
 		this.getChildren().add(new ButtonNoGun(player));

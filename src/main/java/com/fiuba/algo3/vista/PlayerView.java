@@ -49,17 +49,19 @@ public class PlayerView implements Observer, Drawable {
 	@Override
 	public void change() {
 		changePlayerSkin(player.getStrategyName());
-		if (lastXPosition > player.getPosition().getX()) {
+		int actualX = player.getPosition().getX();
+		int actualY = player.getPosition().getY();
+		if (lastXPosition > actualX) {
 			this.playerImage.setScaleX( - 
 			Math.abs(playerImage.getScaleX()));
 		}
 
-		else if (lastXPosition < player.getPosition().getY()) {
+		else if (lastXPosition < actualX) {
 			this.playerImage.setScaleX(
-			-Math.abs(playerImage.getScaleX()));
+			Math.abs(playerImage.getScaleX()));
 		}
-		lastXPosition = player.getPosition().getX();
-		stage.addViewOnMap(this.playerImage, player.getPosition().getX(), player.getPosition().getY());
+		this.lastXPosition = player.getPosition().getX();
+		stage.addViewOnMap(this.playerImage, actualX, actualY);
 	}
 
 }

@@ -9,7 +9,7 @@ public class ButtonHeavyMachineGun extends Button {
 	public ButtonHeavyMachineGun(Player player) {
 		super();
 		this.setText("Activate Heavy Machine Gun");
-		this.setMinHeight(100);
+		this.setMinHeight(20);
 		this.setOnAction(new HandlerHeavyMachineGun(player));
 	}
 }

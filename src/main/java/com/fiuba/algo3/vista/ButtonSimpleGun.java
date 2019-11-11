@@ -11,7 +11,7 @@ public class ButtonSimpleGun extends Button {
 	public ButtonSimpleGun(Player player) {
 		super();
 		this.setText("Activate Simple Gun");
-		this.setMinHeight(100);
+		this.setMinHeight(20);
 		this.setOnAction(new HandlerSimpleGun(player));
 	}
 }

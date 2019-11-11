@@ -10,7 +10,7 @@ public class ButtonNoGun extends Button {
 	public ButtonNoGun(Player player) {
 		super();
 		this.setText("Activate No Gun");
-		this.setMinHeight(100);
+		this.setMinHeight(20);
 		this.setOnAction(new HandlerNoGun(player));
 	}
 
