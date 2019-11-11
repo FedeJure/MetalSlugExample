@@ -12,12 +12,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import main.java.com.fiuba.algo3.modelo.Map;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.paint.Color;
 
 public class MapView extends Group {
 
@@ -41,8 +35,6 @@ public class MapView extends Group {
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeigth(); j++) {
                 Pane v = new Pane();
-                v.setBorder(new Border(new BorderStroke(Color.BLACK, 
-                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 v.setMinHeight(this.tileHeigth);
                 v.setMinWidth(this.tileWidth);
                 panes[i][j] = v;

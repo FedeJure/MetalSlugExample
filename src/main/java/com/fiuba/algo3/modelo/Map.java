@@ -21,7 +21,6 @@ public class Map extends Observable {
     public void positionate(Positionable positionable, Position position) {
         cells.get(position.toString()).occupy(positionable);
         positionable.setPosition(position);
-        notifyObservers();
     }
 
     public int getHeigth() {
@@ -44,11 +43,11 @@ public class Map extends Observable {
 
     public void movePositionableToUp(Positionable positionable) {
         movePositionableTo(positionable, new Position(positionable.getPosition().getX(),
-                                            positionable.getPosition().getY() +1));
+                                            positionable.getPosition().getY() -1));
     }
     public void movePositionableToDown(Positionable positionable) {
         movePositionableTo(positionable, new Position(positionable.getPosition().getX(),
-                                            positionable.getPosition().getY() -1));
+                                            positionable.getPosition().getY() +1));
     }
 
     private void movePositionableTo(Positionable positionable, Position position) {
@@ -56,8 +55,7 @@ public class Map extends Observable {
         if (!fromMove.hasOccupant(positionable)) {
             throw new RuntimeException("There is no target!");
         }
-        Cell toMove = cells.get(position.toString());
-        toMove.occupy(positionable);
+        positionate(positionable, position);
         fromMove.dropOccupant();
     }
 }
